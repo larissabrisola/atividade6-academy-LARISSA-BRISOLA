@@ -1,4 +1,7 @@
 Feature: Cadastro de usuário
+Como um usuário qualquer 
+Quero poder me cadastrar 
+Para ter meus dados salvos
 
     Background: Tela de cadastro
         Given usuário está na tela de cadastro
@@ -57,8 +60,13 @@ Feature: Cadastro de usuário
     Scenario: Deve ser possivel voltar para a página Inicial
         When clicar para voltar a página inicial
         Then devo ser redirecionado para página inicial
-
-    # later
-    # na duvida se vale a pena
-    #Scenario: Deve ser possível cadastrar usuário com 100 caracteres no nome
-    #Scenario: Deve ser possível cadastrar usuário com 60 caracteres no email
+    Scenario: Deve ser possível cadastrar usuário com 100 caracteres no nome
+        When informar um nome com 100 caracteres
+        And informar um email válido
+        And confirmar
+        Then o usuário será cadastrado e uma mensagem de sucesso será exibida
+    Scenario: Deve ser possível cadastrar usuário com 60 caracteres no email
+        When informar um nome válido
+        And informar um email com 60 caracteres
+        And confirmar
+        Then o usuário será cadastrado e uma mensagem de sucesso será exibida

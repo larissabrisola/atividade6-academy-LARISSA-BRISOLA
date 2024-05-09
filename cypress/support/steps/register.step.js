@@ -3,6 +3,9 @@ import { faker } from "@faker-js/faker";
 import RegisterPage from "../pages/register.page";
 const registerPage = new RegisterPage();
 
+
+
+
 Given("usuário está na tela de cadastro", () => {
   cy.visit("https://rarocrud-frontend-88984f6e4454.herokuapp.com/users/novo");
   cy.url().should('eq', 'https://rarocrud-frontend-88984f6e4454.herokuapp.com/users/novo')
@@ -35,6 +38,16 @@ When("informar um e-mail já utilizado", function () {
 });
 When('clicar para voltar a página inicial', ()=>{
   registerPage.clickBackToHome();
+})
+When('informar um nome com 100 caracteres', ()=>{
+  let longName = faker.string.alpha(100) 
+
+ registerPage.typeName(longName)
+})
+When('informar um email com 60 caracteres', ()=>{
+  let longEmail = faker.string.alpha(50) 
+  registerPage.typeEmail(longEmail + "@teste.com") 
+
 })
 
 // then 
