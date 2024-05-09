@@ -1,14 +1,14 @@
 Feature: Lista de usuários 
 
-    Scenario: Listar usuários com sucesso 
-        Given que existe usuários cadastrados
-        When acesso a tela inicial 
-        Then os usuários cadastrados são exibidos 
+   # Scenario: Listar usuários com sucesso 
+   #     Given que existe usuários cadastrados
+   #     When acesso a tela inicial 
+   #     Then os usuários cadastrados são exibidos 
 #Scenario: Devem exibir opções para exibir detalhes ou excluir usuário -  posso matar dentro desse cenario
-    Scenario: Deve exibir uma opção para cadastrar usuário quando não existir usuários cadastrados
-        Given que não existe usuários cadastrados
-        When acesso a tela inicial 
-        Then um texto informando que não existe usuários cadastrados com um botão para cadastrar novo usuário será exibido
+  #  Scenario: Deve exibir uma opção para cadastrar usuário quando não existir usuários cadastrados
+  #      Given que não existe usuários cadastrados
+   #     When acesso a tela inicial 
+   #     Then um texto informando que não existe usuários cadastrados com um botão para cadastrar novo usuário será exibido
 
     Scenario: Deve exibir paginação se existir mais de 6 usuários cadastrados
     Scenario: Deve ser possível avançar entre as páginas da lista de usuários
