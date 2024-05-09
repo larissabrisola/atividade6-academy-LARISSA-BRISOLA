@@ -5,6 +5,7 @@ const registerPage = new RegisterPage();
 
 Given("usuário está na tela de cadastro", () => {
   cy.visit("https://rarocrud-frontend-88984f6e4454.herokuapp.com/users/novo");
+  cy.url().should('eq', 'https://rarocrud-frontend-88984f6e4454.herokuapp.com/users/novo')
 });
 
 // when 
@@ -32,8 +33,14 @@ When("informar um e-mail já utilizado", function () {
     })
     registerPage.typeEmail("lalalala@gmail.com");
 });
+When('clicar para voltar a página inicial', ()=>{
+  registerPage.clickBackToHome();
+})
 
 // then 
+Then('devo ser redirecionado para página inicial', ()=>{
+  cy.url().should('eq', 'https://rarocrud-frontend-88984f6e4454.herokuapp.com/users')
+})
 Then("o usuário será cadastrado e uma mensagem de sucesso será exibida", () => {
     cy.get(".go2344853693");
     cy.contains("Usuário salvo com sucesso").should("be.visible");

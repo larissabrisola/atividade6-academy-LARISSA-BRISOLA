@@ -54,7 +54,11 @@ Feature: Cadastro de usuário
         And informar um email "t@i"
         And confirmar
         Then uma mensagem informando o minimo de caracteres do email deverá ser exibida
+    Scenario: Deve ser possivel voltar para a página Inicial
+        When clicar para voltar a página inicial
+        Then devo ser redirecionado para página inicial
+
     # later
     # na duvida se vale a pena
-    Scenario: Deve ser possível cadastrar usuário com 100 caracteres no nome
-    Scenario: Deve ser possível cadastrar usuário com 60 caracteres no email
+    #Scenario: Deve ser possível cadastrar usuário com 100 caracteres no nome
+    #Scenario: Deve ser possível cadastrar usuário com 60 caracteres no email

@@ -2,7 +2,8 @@ export default class RegisterPage {
     inputName = "#name";
     inputEmail = "#email";
     buttonSalvar = ".sc-kpDqfm";
-  
+    backToHome = "#root > div.sc-aXZVg.iYVcAu > div > a.sc-gEvEer.fGGZSe"
+
     //
     typeName(name) {
       cy.get(this.inputName).type(name);
@@ -14,5 +15,9 @@ export default class RegisterPage {
   
     clickButtonSalvar() {
       cy.get(this.buttonSalvar).click();
+    }
+    
+    clickBackToHome (){
+      cy.get(this.backToHome).click()
     }
   }
